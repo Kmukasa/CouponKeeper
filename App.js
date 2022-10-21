@@ -1,8 +1,7 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Alert, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { Alert, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import Coupon from './components/Coupon';
-import TopBar from './components/TopBar';
 
 
 export default function App() {
@@ -13,6 +12,10 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
+        <StatusBar
+          style="light"
+          hidden={false}
+        />
         <Coupon 
           imgSrc={require('./assets/McDonalds.png')}
           {...discount}
@@ -34,7 +37,6 @@ export default function App() {
           imgSrc={require('./assets/McDonalds.png')}
           {...discount}
         />
-      <StatusBar style="auto" />
     </View>
   );
 }
