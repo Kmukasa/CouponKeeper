@@ -25,8 +25,6 @@ const styles = StyleSheet.create({
     position: "relative",
     flexDirection: "row",
     flexWrap: "wrap",
-    // width: 342,
-    // justifySelf: "center",
 
     alignSelf: "stretch",
     height: 104,
