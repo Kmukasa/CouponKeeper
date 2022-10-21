@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Alert, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import { Alert, StyleSheet, View} from 'react-native';
 import Coupon from './components/Coupon';
+import AddCoupon from './components/AddCoupon';
 
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
           imgSrc={require('./assets/McDonalds.png')}
           {...discount}
         />
+        <AddCoupon/>
     </View>
   );
 }
