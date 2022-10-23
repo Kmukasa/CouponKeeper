@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, Image, Pressable} from 'react-native';
 
-export default function Coupon(imgSrc, discount) {
+export default function Coupon(imgSrc, onPress) {
   return (
     <Pressable style={styles.container} onPress={()=>{alert("here")}}>
         <Image

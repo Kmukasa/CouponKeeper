@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Alert, StyleSheet, View} from 'react-native';
+import { ScrollView, StyleSheet, View} from 'react-native';
 import Coupon from './components/Coupon';
 import AddCoupon from './components/AddCoupon';
+import TopBar from './components/TopBar';
 
 
 export default function App() {
@@ -11,33 +12,48 @@ export default function App() {
     brand: "McDonalds",
     expirationDate: "November 11 2022",
   }
+
   return (
     <View style={styles.container}>
         <StatusBar
           style="light"
           hidden={false}
         />
-        <Coupon 
-          imgSrc={require('./assets/McDonalds.png')}
-          {...discount}
-          onPress={() => Alert.alert(
-            'Alert Title',
-            'alertMessage',
-            [
-              {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
-              {text: 'OK', onPress: this.onDeleteBTN},
-            ],
-            { cancelable: false }
-          )}
-        />
-        <Coupon 
-          imgSrc={require('./assets/McDonalds.png')}
-          {...discount}
-        />
-        <Coupon 
-          imgSrc={require('./assets/McDonalds.png')}
-          {...discount}
-        />
+        <TopBar/>
+        <ScrollView style={styles.scrollView}>
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          />
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          />
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          />
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          />
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          /> 
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          />
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          />
+          <Coupon 
+            imgSrc={require('./assets/McDonalds.png')}
+            {...discount}
+          /> 
+        </ScrollView>
         <AddCoupon/>
     </View>
   );
@@ -50,4 +66,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  scrollView: {
+    flex: 1, 
+    width: '100%',
+    height: '65%', 
+    position: 'absolute',
+    paddingTop: 10,
+    paddingBottom: 10,
+  }
 });
